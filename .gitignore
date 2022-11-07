@@ -1,0 +1,7 @@
+.vscode
+.env
+
+node_modules
+resources/files/note.txt
+package-lock.json
+yarn.lock

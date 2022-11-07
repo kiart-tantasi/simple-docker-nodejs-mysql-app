@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  mysqlhost:
+    image: mysql:5.7.12
+    # ports:
+    #   - '3306:3306'
+    volumes:
+      - randomvolume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: random
+
+  app:
+    image: node:12-alpine
+    command: sh -c 'yarn install && yarn run dev'
+    ports:
+      - "4000:4000"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysqlhost
+volumes:
+  randomvolume:

@@ -1,0 +1,10 @@
+.vscode
+.gitignore
+.env
+
+node_modules
+resources/files/note.txt
+docker-compose.yml
+Makefile
+package-lock.json
+yarn.lock
